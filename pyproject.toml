@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smart-qa-portal"
+version = "0.1.0"
+description = "An AI-powered Q&A portal that helps users find accurate answers to technical questions by leveraging a curated knowledge base and machine learning models. The system can automatically categorize questions, provide relevant documentation links, and offer step-by-step troubleshooting guidance."
+dependencies = ['fastapi', 'uvicorn', 'sentence-transformers', 'elasticsearch', 'pytest']
+
+[tool.black]
+line-length = 88
+target-version = ['py39']
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+addopts = "-v --tb=short"
